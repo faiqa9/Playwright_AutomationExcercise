@@ -1,0 +1,26 @@
+[
+  {
+    "testCase": "TC_LOGIN_001",
+    "email": "faiqayasin961@gmail.com",
+    "password": "#1234#1234#",
+    "expected": "success"
+  },
+  {
+    "testCase": "TC_LOGIN_002",
+    "email": "faiqayasin961@gmail.com",
+    "password": "wrongpassword",
+    "expected": "invalid"
+  },
+  {
+    "testCase": "TC_LOGIN_003",
+    "email": "",
+    "password": "#1234#1234#",
+    "expected": "emptyEmail"
+  },
+  {
+    "testCase": "TC_LOGIN_004",
+    "email": "faiqayasin961@gmail.com",
+    "password": "",
+    "expected": "emptyPassword"
+  }
+]
