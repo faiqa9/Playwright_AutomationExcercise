@@ -40,44 +40,44 @@ export default defineConfig({
   /* Configure projects for major browsers */
 projects: [
 
-  {
-    name: 'setup',
-    testMatch: /auth\.setup\.spec\.js/,
-  },
+{
+  name: 'setup',
+  testMatch: /auth\.setup\.spec\.js/,
+},
 
-  {
-    name: 'chromium-auth',
-    testMatch: /order\.spec\.js/,
-    use: {
-      ...devices['Desktop Chrome'],
-      storageState: 'playwright/.auth/user.json',
-    },
-    dependencies: ['setup'],
+{
+  name: 'chromium-auth',
+  testMatch: /order\.spec\.js/,
+  use: {
+    ...devices['Desktop Chrome'],
+    storageState: 'playwright/.auth/user.json',
   },
+  dependencies: ['setup'],
+},
 
-  {
-    name: 'chromium',
-    testIgnore: /order\.spec\.js/,
-    use: {
-      ...devices['Desktop Chrome'],
-    },
+{
+  name: 'chromium',
+  testIgnore: [/order\.spec\.js/, /auth\.setup\.spec\.js/],
+  use: {
+    ...devices['Desktop Chrome'],
   },
+},
 
-  {
-    name: 'firefox',
-    testIgnore: /order\.spec\.js/,
-    use: {
-      ...devices['Desktop Firefox'],
-    },
+{
+  name: 'firefox',
+  testIgnore: [/order\.spec\.js/, /auth\.setup\.spec\.js/],
+  use: {
+    ...devices['Desktop Firefox'],
   },
+},
 
-  {
-    name: 'webkit',
-    testIgnore: /order\.spec\.js/,
-    use: {
-      ...devices['Desktop Safari'],
-    },
+{
+  name: 'webkit',
+  testIgnore: [/order\.spec\.js/, /auth\.setup\.spec\.js/],
+  use: {
+    ...devices['Desktop Safari'],
   },
+},
 
 ],
 
