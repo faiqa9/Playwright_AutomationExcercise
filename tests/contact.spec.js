@@ -38,11 +38,7 @@ test('TC_CONTACT_002 Submit Contact Form', async ({ page }) => {
     });
 
     // Submit
-    await page.locator('[data-qa="submit-button"]').click();
-
    await page.locator('[data-qa="submit-button"]').click();
-
-await page.waitForTimeout(2000);
 
 console.log('URL:', await page.url());
 console.log('BODY:', await page.locator('body').innerText());
