@@ -15,6 +15,9 @@ test('@regression @order TC_ORDER_001 Place Order', async ({ page, loginPage }) 
     // Wait for products
     await expect(page.locator('.product-image-wrapper').first()).toBeVisible();
 
+     // Verify user is authenticated
+    await expect(page.getByRole('link', { name: 'Logout' })).toBeVisible();
+
     // Hover first product
     const firstProduct = page.locator('.product-image-wrapper').first();
 
